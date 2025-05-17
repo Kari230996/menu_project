@@ -1,0 +1,65 @@
+{% load menu_tags %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        nav li {
+            margin: 5px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 3px 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .active>a {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        nav ul ul {
+            margin-left: 20px;
+            border-left: 1px dashed #ccc;
+            padding-left: 10px;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        {% draw_menu 'main_menu' %}
+
+    </nav>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>
