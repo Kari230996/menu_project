@@ -1,34 +1,34 @@
-# 📂 Древовидное меню на Django
+# 📂 Tree Menu in Django
 
-Тестовое задание для Junior Python Backend Developer: реализовать древовидное меню с возможностью вложенности и подсветкой активного пункта.
-
----
-
-## 🚀 Возможности
-
-- Отображение древовидного меню с помощью `{% draw_menu 'menu_name' %}`
-- Хранение меню в базе данных
-- Редактирование через Django admin
-- Подсветка активного пункта и автоматическое раскрытие родителей
-- Поддержка нескольких меню на одной странице
-- Только один SQL-запрос на меню
-- Используется только Django и стандартная библиотека Python
+Test task for Junior Python Backend Developer: implement a tree-like menu with nesting support and highlighting of the active item.
 
 ---
 
-## 🧱 Структура модели
+## 🚀 Features
 
-Модель `MenuItem`:
-
-- `title` — название пункта
-- `url` — путь (например, `/about/`)
-- `named_url` — альтернативно, путь по имени `url` из `urls.py`
-- `parent` — родительский пункт меню (для вложенности)
-- `menu_name` — имя меню (чтобы различать несколько меню на сайте)
+* Display a tree menu using `{% draw_menu 'menu_name' %}`
+* Store menus in the database
+* Edit through Django admin
+* Highlight active item and automatically expand parent items
+* Support multiple menus on one page
+* Only one SQL query per menu
+* Uses only Django and Python standard library
 
 ---
 
-## 🔧 Установка
+## 🧱 Model Structure
+
+Model `MenuItem`:
+
+* `title` — item name
+* `url` — path (e.g., `/about/`)
+* `named_url` — alternatively, path by `url` name from `urls.py`
+* `parent` — parent menu item (for nesting)
+* `menu_name` — menu name (to distinguish multiple menus on the site)
+
+---
+
+## 🔧 Installation
 
 ```bash
 git clone https://github.com/Kari230996/menu_project.git
@@ -38,20 +38,28 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## 🧪 Тесты
+---
+
+## 🧪 Tests
 
 ```bash
 python manage.py test
 ```
 
-## 🗂 Пример пунктов меню в админке
-| Название | URL          | Родитель | Название меню |
-| -------- | ------------ | -------- | ------------- |
-| Главная  | `/`          | —        | main\_menu    |
-| О нас    | `/about/`    | —        | main\_menu    |
-| Команда  | `/team/`     | О нас    | main\_menu    |
-| Контакты | `/contacts/` | —        | main\_menu    |
+---
 
-## 📝 Автор
-Разработано в рамках тестового задания Junior Python Backend Developer.
-Связь: [karina.apaeva96@gmail.com]
+## 🗂 Example Menu Items in Admin
+
+| Title    | URL          | Parent | Menu Name  |
+| -------- | ------------ | ------ | ---------- |
+| Home     | `/`          | —      | main\_menu |
+| About    | `/about/`    | —      | main\_menu |
+| Team     | `/team/`     | About  | main\_menu |
+| Contacts | `/contacts/` | —      | main\_menu |
+
+---
+
+## 📝 Author
+
+Developed as part of a test task for Junior Python Backend Developer.
+Contact: [karina.apaeva96@gmail.com](mailto:karina.apaeva96@gmail.com)
